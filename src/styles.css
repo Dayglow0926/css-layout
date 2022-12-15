@@ -4,7 +4,6 @@
   align-items: center;
   height: 100vh;
 
-  flex-wrap: wrap;
   flex-direction: row-reverse;
 
   align-content: space-around;
@@ -19,4 +18,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.child:nth-child(2) {
+  background: black;
+  /* 요소의 줄어드는 범위를 조절*/
+  flex-shrink: 2;
+}
+
+.child:nth-child(1) {
+  /*요소의 빈공간을 채우는 범위를 조절*/
+  flex-grow: 1;
 }
