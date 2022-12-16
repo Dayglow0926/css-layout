@@ -10,7 +10,8 @@
 }
 
 .child {
-  width: 200px;
+  /*main axis 기본 값을 설정*/
+  flex-basis: 200px;
   height: 200px;
   background: peru;
   color: white;
