@@ -5,7 +5,7 @@ SCSS Masterclass
 
 ## Flexbox:
 
-- [ ] flex-direction
+- [x] flex-direction
 - [ ] order
 - [ ] justify-content
 - [ ] align-items
