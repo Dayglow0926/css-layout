@@ -6,11 +6,11 @@ SCSS Masterclass
 ## Flexbox:
 
 - [x] flex-direction
-- [ ] order
-- [ ] justify-content
+- [x] order
+- [x] justify-content
 - [ ] align-items
 - [ ] align-self
-- [ ] flex-wrap
+- [x] flex-wrap
 - [ ] align-content
 - [ ] flex-grow
 - [ ] flex-shrink
