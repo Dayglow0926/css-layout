@@ -1,18 +1,16 @@
 .father {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: space-around;
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 100px 50px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  /*column row 합친 속성*/
+  gap: 10px;
 }
 
 .child {
   /*main axis 기본 값을 설정*/
   flex-basis: 200px;
-  height: 200px;
   background: peru;
   color: white;
 
