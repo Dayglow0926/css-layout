@@ -1,31 +1,27 @@
-.father {
+.grid {
   display: grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-template-rows: 100px 50px 100px;
-  column-gap: 10px;
-  row-gap: 10px;
-  /*column row 합친 속성*/
-  gap: 10px;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: 100px repeat(2, 200px) 100px;
+  grid-template-areas:
+    "header header header header"
+    "content content content nav"
+    "content content content nav"
+    "footer footer footer footer";
 }
 
-.child {
-  /*main axis 기본 값을 설정*/
-  flex-basis: 200px;
-  background: peru;
-  color: white;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header {
+  background-color: #2ecc71;
+  grid-area: header;
 }
-
-.child:nth-child(2) {
-  background: black;
-  /* 요소의 줄어드는 범위를 조절*/
-  flex-shrink: 2;
+.content {
+  background-color: #8e44ad;
+  grid-area: content;
 }
-
-.child:nth-child(1) {
-  /*요소의 빈공간을 채우는 범위를 조절*/
-  flex-grow: 1;
+.nav {
+  background-color: #3498db;
+  grid-area: nav;
+}
+.footer {
+  background-color: #f39c12;
+  grid-area: footer;
 }
