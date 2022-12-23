@@ -28,28 +28,55 @@ SCSS Masterclass
 
 ## Grid:
 
-- [ ] grid-template-columns
-- [ ] grid-template-rows
-- [ ] column-gap
-- [ ] row-gap
-- [ ] gap
-- [ ] grid-template-areas
-- [ ] grid-column-start
-- [ ] grid-column-end
-- [ ] grid-row-start
-- [ ] grid-row-end
-- [ ] grid-column
-- [ ] grid-row
-- [ ] grid-template
-- [ ] justify-items
-- [ ] align-items
-- [ ] place-items
-- [ ] justify-content
-- [ ] align-content
-- [ ] place-content
-- [ ] justify-self
-- [ ] align-self
-- [ ] place-self
+- [x] grid-template-columns
+  - grid의 column의 개수와 크기를 지정
+- [x] grid-template-rows
+  - grid의 row의 개수와 크기를 지정
+- [x] column-gap
+  - column 사이의 거리를 지정
+- [x] row-gap
+  - row 사이의 거리를 지정
+- [x] gap
+  - column과 column 사이 row와 row사이의 거리를 지정
+- [x] grid-template-areas
+  - grid-area를 통해 지정된 이름으로 grid를 배치할 수 있음
+- [x] grid-column-start
+  - grid의 시작 column을 지정
+- [x] grid-column-end
+  - grid의 마지막 column을 지정
+- [x] grid-row-start
+  - grid의 시작 row를 지정
+- [x] grid-row-end
+  - grid의 마지막 row를 지정
+- [x] grid-column
+  - grid의 시작과 마지막 column을 지정
+- [x] grid-row
+  - grid의 시작과 마지막 row을 지정
+- [x] grid-template
+  - grid 영역을 지정
+
+---
+
+### items ( 각 영역의 정렬을 정의 )
+
+- [x] justify-items (main 축)
+- [x] align-items (cross 축)
+- [x] place-items (cross축, main축)
+
+### content ( grid 영역의 정렬을 정의 )
+
+- [x] justify-content (main 축)
+- [x] align-content (cross 축)
+- [x] place-content (cross축, main축)
+
+### self ( 영역의 자기 자신의 정렬을 정의)
+
+- [x] justify-self (main 축)
+- [x] align-self (cross 축)
+- [x] place-self (cross축, main축)
+
+---
+
 - [ ] grid-auto-rows
 - [ ] grid-auto-flow
 - [ ] grid-auto-columns
