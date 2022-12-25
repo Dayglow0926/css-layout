@@ -77,17 +77,29 @@ SCSS Masterclass
 
 ---
 
-- [ ] grid-auto-rows
-- [ ] grid-auto-flow
-- [ ] grid-auto-columns
-- [ ] Keywords & Functions:
-- [ ] repeat
-- [ ] fr
-- [ ] minmax
-- [ ] auto-fit
-- [ ] auto-fill
-- [ ] min-content
-- [ ] max-content
+- [x] grid-auto-rows
+  - 늘어나는 row grid의 크기 값을 지정할 수 있음
+- [x] grid-auto-flow
+  - 늘어나는 grid 요소들의 메인 축을 지정할 수 있음 ( column, row)
+- [x] grid-auto-columns
+  - 늘어나는 column grid의 크기 값을 지정 할 수 있음
+
+### Keywords & Functions:
+
+- [x] repeat
+  - 반복되는 속성을 간략하게 정의
+- [x] fr
+  - 분할 개수를 지정 ( 분할 개수에 맞게 사이즈 자동 변경됨)
+- [x] minmax
+  - 크기 범위를 최소값과 최대값을 지정
+- [x] auto-fit
+  - 자동으로 그리드의 개수를 맞추어 준다.
+- [x] auto-fill
+  - 자동으로 그리드의 크기를 변경한다.
+- [x] min-content
+  - content 내용을 기준으로 최소값
+- [x] max-content
+  - content 내용을 기준으로 최대값
 
 ## SCSS:
 
