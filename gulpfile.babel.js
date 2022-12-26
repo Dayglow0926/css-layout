@@ -1,23 +1,23 @@
 import gulp from "gulp";
-import { deleteSync } from "del";
+import del from "del";
+//import sass from "gulp-sass";
 import minify from "gulp-csso";
-import gulpSass from "gulp-sass";
-import sass2 from "sass";
 import autoprefixer from "gulp-autoprefixer";
 
-const sass = gulpSass(sass2);
+//sass.compiler = require("node-sass");
+const sass = require("gulp-sass")(require("node-sass"));
 
 const routes = {
   css: {
     watch: "src/scss/*",
     src: "src/scss/styles.scss",
-    dest: "dest/css",
+    dest: "dist/css",
   },
 };
 
 const styles = () =>
   gulp
-    .src(routes.css.src)
+    .src(routes.css.src, { allowEmpty: true })
     .pipe(sass().on("error", sass.logError))
     .pipe(
       autoprefixer({
@@ -32,7 +32,7 @@ const watch = () => {
   gulp.watch(routes.css.watch, styles);
 };
 
-const clean = async () => await deleteSync(["dest/"]);
+const clean = () => del(["dist/styles.css"]);
 
 const prepare = gulp.series([clean]);
 

@@ -1,23 +1,32 @@
 {
-  "name": "scss-boilerplate",
+  "name": "scss-masterclass",
   "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nomadcoders/scss-masterclass.git"
+  },
+  "author": "Nicolás Serrano Arévalo <itnico.las.me@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "del": "^4.1.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-csso": "^3.0.1"
+  },
   "scripts": {
     "dev": "gulp dev"
   },
-  "type": "module",
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.18.9",
-    "@babel/preset-env": "^7.18.9",
-    "@babel/register": "^7.18.9",
-    "del": "^7.0.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-csso": "^4.0.1",
-    "gulp-sass": "^5.1.0",
-    "node-sass": "^7.0.1"
+  "browserslist": {
+    "browsers": [
+      "last 2 versions"
+    ]
   },
-  "dependencies": {
-    "sass": "^1.54.0"
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^8.0.0"
   }
 }
