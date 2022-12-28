@@ -1,0 +1,33 @@
+@import "grid.scss";
+
+body {
+  background: peachpuff;
+  margin: 0px;
+}
+
+.grid {
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  height: 100vh;
+  align-items: center;
+  justify-items: center;
+  border-top: 1px solid #af7832;
+  border-left: 1px solid #af7832;
+
+  > div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #af7832;
+    border-right: 1px solid #af7832;
+
+    &:nth-child(4) {
+      @extend %innergird;
+    }
+    &:nth-child(6) {
+      @extend %innergird;
+    }
+  }
+}

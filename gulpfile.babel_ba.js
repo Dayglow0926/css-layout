@@ -9,14 +9,9 @@ const sass = require("gulp-sass")(require("node-sass"));
 
 const routes = {
   css: {
-    watch: "src/scss/base/*",
-    src: "src/scss/base/styles.scss",
-    dest: "dist/base/css",
-  },
-  tenxnineteen: {
-    watch: "src/scss/tenxnineteen/*",
-    src: "src/scss/tenxnineteen/styles.scss",
-    dest: "dist/tenxnineteen/css",
+    watch: "src/scss/*",
+    src: "src/scss/styles.scss",
+    dest: "dist/css",
   },
 };
 
@@ -33,30 +28,15 @@ const styles = () =>
     .pipe(minify())
     .pipe(gulp.dest(routes.css.dest));
 
-const tenxnineteen = () =>
-  gulp
-    .src(routes.tenxnineteen.src, { allowEmpty: true })
-    .pipe(sass().on("error", sass.logError))
-    .pipe(
-      autoprefixer({
-        flexbox: true,
-        grid: "autoplace",
-      })
-    )
-    .pipe(minify())
-    .pipe(gulp.dest(routes.tenxnineteen.dest));
-
 const watch = () => {
   gulp.watch(routes.css.watch, styles);
-  gulp.watch(routes.tenxnineteen.watch, tenxnineteen);
 };
 
-const clean = () =>
-  del(["dist/css", "dist/base/styles.css", "dist/tenxnineteen/styles.css"]);
+const clean = () => del(["dist/styles.css"]);
 
 const prepare = gulp.series([clean]);
 
-const assets = gulp.series([styles, tenxnineteen]);
+const assets = gulp.series([styles]);
 
 const live = gulp.parallel([watch]);
 
