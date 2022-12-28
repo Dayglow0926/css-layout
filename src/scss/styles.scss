@@ -1,4 +1,9 @@
 @import "_variables.scss";
+@import "_mixins.scss";
+
+h1 {
+  @include sexyTitle();
+}
 
 h2 {
   color: $bg;
@@ -17,5 +22,15 @@ h2 {
   }
   bottom {
     color: red;
+  }
+}
+
+a {
+  margin-bottom: 10px;
+  &:nth-child(odd) {
+    @include link("odd");
+  }
+  &:nth-child(even) {
+    @include link("even");
   }
 }
