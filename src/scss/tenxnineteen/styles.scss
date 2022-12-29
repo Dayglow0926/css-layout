@@ -1,18 +1,25 @@
-@import "grid.scss";
+@import "_grid.scss";
+@import "_variables";
 
 body {
-  background: peachpuff;
+  background: whitesmoke;
   margin: 0px;
+  color: $basecolor;
+  font-weight: 600;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid {
   display: grid;
-  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  grid-template: 1fr 6fr 1fr / 1fr 2fr 1fr;
   height: 100vh;
   align-items: center;
   justify-items: center;
-  border-top: 1px solid #af7832;
-  border-left: 1px solid #af7832;
+  border-top: 1px solid $basecolor;
+  border-left: 1px solid $basecolor;
 
   > div {
     display: flex;
@@ -20,14 +27,108 @@ body {
     height: 100%;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #af7832;
-    border-right: 1px solid #af7832;
+    //border-bottom: 1px solid $basecolor;
+    //border-right: 1px solid $basecolor;
 
+    &:nth-child(1) {
+      position: relative;
+      > .left-top__animation {
+        @extend %topgrid;
+      }
+    }
+
+    &:nth-child(2) {
+      position: relative;
+      > .top-down {
+        top: 0;
+        position: absolute;
+        width: 100%;
+        border-left: 1px solid $basecolor;
+        border-right: 1px solid $basecolor;
+        z-index: -1;
+
+        animation: 1s ease-in-out top-down-line_animation forwards;
+        animation-delay: 0.5s;
+      }
+    }
+
+    &:nth-child(3) {
+      position: relative;
+      > .right-top__animation {
+        @extend %topgrid;
+      }
+      &:hover {
+        background-color: $basecolor;
+        color: whitesmoke;
+      }
+    }
     &:nth-child(4) {
-      @extend %innergird;
+      position: relative;
+      @include innergird("left");
+      > .horizon {
+        position: absolute;
+        width: 100vw;
+        height: inherit;
+        border-top: 1px solid $basecolor;
+        border-bottom: 1px solid $basecolor;
+        z-index: -1;
+
+        animation: 1s ease-in-out left-right-line_animation forwards;
+      }
     }
     &:nth-child(6) {
-      @extend %innergird;
+      position: relative;
+      @include innergird("right");
     }
+    &:nth-child(8) {
+      overflow: hidden;
+      justify-content: flex-start;
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: flex;
+        text-align: center;
+        white-space: nowrap;
+        text-transform: uppercase;
+
+        animation: text_move 7s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes text_move {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50.5%);
+  }
+}
+
+@keyframes left-right-line_animation {
+  0% {
+    width: 0vw;
+  }
+  100% {
+    width: 100vw;
+  }
+}
+
+@keyframes top-down-line_animation {
+  0% {
+    height: 0vh;
+  }
+  100% {
+    height: 100vh;
+  }
+}
+
+@keyframes top-down__animation {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
   }
 }

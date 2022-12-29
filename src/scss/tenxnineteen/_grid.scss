@@ -1,0 +1,99 @@
+@import "_variables";
+
+@mixin innergird($lr) {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  height: 100%;
+  width: 100%;
+
+  > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    div {
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+
+      border-bottom: 1px solid $basecolor;
+
+      @if $lr == "left" {
+        left: -100%;
+        animation: 0.3s linear menu-left-right__animation forwards;
+      } @else if $lr == "right" {
+        right: -100%;
+        animation: 0.3s linear menu-right-left__animation forwards;
+      }
+
+      &:hover {
+        background-color: $basecolor;
+        color: whitesmoke;
+      }
+    }
+    &:nth-child(2) .left-ani {
+      animation-delay: 2s;
+    }
+    &:nth-child(3) .left-ani {
+      animation-delay: 2.1s;
+    }
+    &:nth-child(4) .left-ani {
+      animation-delay: 2.2s;
+    }
+    &:nth-child(5) .left-ani {
+      animation-delay: 2.3s;
+    }
+    &:nth-child(6) .left-ani {
+      animation-delay: 2.4s;
+    }
+    &:nth-child(1) .right-ani {
+      animation-delay: 2s;
+    }
+    &:nth-child(2) .right-ani {
+      animation-delay: 2.1s;
+    }
+    &:nth-child(3) .right-ani {
+      animation-delay: 2.2s;
+    }
+    &:nth-child(4) .right-ani {
+      animation-delay: 2.3s;
+    }
+    &:nth-child(5) .right-ani {
+      animation-delay: 2.4s;
+    }
+  }
+}
+
+%topgrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  animation: 0.1s linear top-down__animation forwards;
+  animation-delay: 2s;
+}
+
+@keyframes menu-left-right__animation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes menu-right-left__animation {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
