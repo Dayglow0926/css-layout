@@ -18,6 +18,11 @@ const routes = {
     src: "src/scss/tenxnineteen/styles.scss",
     dest: "dist/tenxnineteen/css",
   },
+  besthorrorscenes: {
+    watch: "src/scss/besthorrorscenes/*",
+    src: "src/scss/besthorrorscenes/styles.scss",
+    dest: "dist/besthorrorscenes/css",
+  },
 };
 
 const styles = () =>
@@ -46,17 +51,36 @@ const tenxnineteen = () =>
     .pipe(minify())
     .pipe(gulp.dest(routes.tenxnineteen.dest));
 
+const besthorrorscenes = () =>
+  gulp
+    .src(routes.besthorrorscenes.src, { allowEmpty: true })
+    .pipe(sass().on("error", sass.logError))
+    .pipe(
+      autoprefixer({
+        flexbox: true,
+        grid: "autoplace",
+      })
+    )
+    .pipe(minify())
+    .pipe(gulp.dest(routes.besthorrorscenes.dest));
+
 const watch = () => {
   gulp.watch(routes.css.watch, styles);
   gulp.watch(routes.tenxnineteen.watch, tenxnineteen);
+  gulp.watch(routes.besthorrorscenes.watch, besthorrorscenes);
 };
 
 const clean = () =>
-  del(["dist/css", "dist/base/styles.css", "dist/tenxnineteen/styles.css"]);
+  del([
+    "dist/css",
+    "dist/base/styles.css",
+    "dist/tenxnineteen/styles.css",
+    "dist/besthorrorscenes/styles.css",
+  ]);
 
 const prepare = gulp.series([clean]);
 
-const assets = gulp.series([styles, tenxnineteen]);
+const assets = gulp.series([styles, tenxnineteen, besthorrorscenes]);
 
 const live = gulp.parallel([watch]);
 
