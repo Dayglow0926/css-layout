@@ -1,0 +1,56 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster {
+  width: 400px;
+  height: 600px;
+}
+
+.poster .poster-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-weight: 800;
+
+  border-bottom: 1.5px solid black;
+}
+
+.poster-header span:nth-child(1) {
+  margin: 0px;
+  font-size: 60px;
+}
+
+.poster-header span:nth-child(2) {
+  margin: 0px;
+  font-size: 25px;
+}
+
+.poster .poster-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.poster .poster-content div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.poster-picture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-between;
+}
+.poster-picture div {
+  width: 120px;
+  height: 120px;
+  background-color: black;
+  border-radius: 50%;
+}
