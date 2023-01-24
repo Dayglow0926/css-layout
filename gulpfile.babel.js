@@ -23,6 +23,11 @@ const routes = {
     src: "src/scss/besthorrorscenes/styles.scss",
     dest: "dist/besthorrorscenes/css",
   },
+  posterclone: {
+    watch: "src/scss/poster-clone/*",
+    src: "src/scss/poster-clone/styles.scss",
+    dest: "dist/posterclone/css",
+  },
 };
 
 const styles = () =>
@@ -64,10 +69,24 @@ const besthorrorscenes = () =>
     .pipe(minify())
     .pipe(gulp.dest(routes.besthorrorscenes.dest));
 
+const posterclone = () =>
+  gulp
+    .src(routes.posterclone.src, { allowEmpty: true })
+    .pipe(sass().on("error", sass.logError))
+    .pipe(
+      autoprefixer({
+        flexbox: true,
+        grid: "autoplace",
+      })
+    )
+    .pipe(minify())
+    .pipe(gulp.dest(routes.posterclone.dest));
+
 const watch = () => {
   gulp.watch(routes.css.watch, styles);
   gulp.watch(routes.tenxnineteen.watch, tenxnineteen);
   gulp.watch(routes.besthorrorscenes.watch, besthorrorscenes);
+  gulp.watch(routes.posterclone.watch, posterclone);
 };
 
 const clean = () =>
@@ -76,11 +95,17 @@ const clean = () =>
     "dist/base/styles.css",
     "dist/tenxnineteen/styles.css",
     "dist/besthorrorscenes/styles.css",
+    "dist/posterclone/styles.css",
   ]);
 
 const prepare = gulp.series([clean]);
 
-const assets = gulp.series([styles, tenxnineteen, besthorrorscenes]);
+const assets = gulp.series([
+  styles,
+  tenxnineteen,
+  besthorrorscenes,
+  posterclone,
+]);
 
 const live = gulp.parallel([watch]);
 
